@@ -9,5 +9,27 @@
     = stylesheet_link_tag "style"
     = javascript_include_tag "modernizr"
   %body{:class => page_classes}
+    / Header
+    %header.header
+      .row
+        .columns
+          %h1.site-title
+            %a.logo{href: "/"}
+              Emacs.el
+            is a podcast about the emacs community
+        .columns
+          .site-links
+            %a{href: "https://github.com/emacs-el/emacs-el.github.io"}
+              %i.fa.fa-github
+            &nbsp;
+            %a{href: "/feed.xml"}
+              %i.fa.fa-rss
+    / Content
     = yield
-    = javascript_include_tag  "all"
+    / Footer
+    %footer.footer
+      .row
+        .columns
+          %p Copyright © 2015 Emacs.el
+          %p The Emacs.el podcast is made by Daniel Gopar.
+          = javascript_include_tag  "all"

@@ -1,2 +1,34 @@
 @import 'foundation';
 @include foundation-everything;
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import url(https://fonts.googleapis.com/css?family=Lobster+Two|Roboto:400,700,400italic);
+
+body {
+		font-family: 'Roboto', sans-serif;
+}
+
+.header {
+		background-color: purple;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+		margin-bottom: 1rem;
+		color: white;
+		.logo {
+				font-family: 'Lobster Two', cursive;
+				display: inline;
+		}
+		.site-title, .site-links{
+				text-align: center;
+		}
+		.site-links {
+				font-size: 24px;
+		}
+}
+
+.footer {
+    background-color: purple;
+    color: $white;
+		padding-top: 2rem;
+    padding-bottom: 2rem;
+}

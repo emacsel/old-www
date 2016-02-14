@@ -10,6 +10,21 @@ gem 'middleman-autoprefixer'
 # Live-reloading plugin
 gem "middleman-livereload", "~> 3.1.0"
 
+# Use the blog extension
+gem "middleman-blog"
+
+gem 'middleman-deploy', '~> 1.0'
+
+# JavaScript
+gem "execjs"
+gem "therubyracer"
+
+# XML parser
+gem "nokogiri" #for rss feed
+gem "builder"
+
+gem 'font-awesome-sass'
+
 # For faster file watcher updates on Windows:
 gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]
 
