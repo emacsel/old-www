@@ -1,0 +1,41 @@
+= wrap_layout :layout do
+  %article
+    .row
+      .columns
+        .episode
+          %header.episode-header
+            .episode-title
+              %h2
+                Episode
+                = data.page.episode
+                \-
+                = data.page.title
+          .episode-content
+            %audio{:controls => "", :src => data.page.download}
+              %p
+                Your browser does not support the
+                %code audio
+                element
+            %p
+              %a{:href => data.page.download} Download
+              &bullet;
+              %time= current_article.date.strftime('%B %e, %Y')
+            .episode-meta
+              %p= current_article.data.description
+
+            = yield
+
+          .episode-aside
+            %aside
+              %h4.subheader Recent episodes
+              %ul.recent-episodes
+                - blog.articles[0...5].each do |article|
+                  %li.recent
+                    %a{:href => article.url}
+                      Episode
+                      = article.data.episode
+                      \-
+                      = article.title
+                    /= link_to article.title, article
+                    on
+                    = article.date.strftime('%B %e, %Y')

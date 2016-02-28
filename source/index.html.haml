@@ -1,0 +1,29 @@
+---
+title: Emacs.el is a podcat about the emacs community
+---
+.row
+  .columns
+    - blog.articles[0...5].each do |article|
+      %article
+        %header
+          %h2
+            %a{:href => article.url}
+              Episode
+              = article.data.episode
+              \-
+              = article.title
+        %audio{:controls => "", :src => article.data.download}
+          %p
+            Your browser does not support the
+            %code audio
+            element
+        %p
+          %a{:href => article.data.download} Download
+          &bullet;
+          %time= article.date.strftime('%Y-%m-%d')
+        %p
+          %span= article.data.description
+
+        -# = article.data.download
+        -# = article.summary
+        %hr

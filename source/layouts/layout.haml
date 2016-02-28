@@ -1,0 +1,35 @@
+!!!
+%html.no-js{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %meta{:charset => "utf-8"}
+    %meta{:content => "ie=edge", "http-equiv" => "x-ua-compatible"}
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    %title= data.page.title
+    = stylesheet_link_tag "style"
+    = javascript_include_tag "modernizr"
+  %body{:class => page_classes}
+    / Header
+    %header.header
+      .row
+        .columns
+          %h1.site-title
+            %a.logo{href: "/"}
+              Emacs.el
+            is a podcast about the emacs community
+        .columns
+          .site-links
+            %a{href: "https://github.com/emacs-el/emacs-el.github.io"}
+              %i.fa.fa-github
+            &nbsp;
+            %a{href: "/feed.xml"}
+              %i.fa.fa-rss
+    / Content
+    = yield
+    / Footer
+    %footer.footer
+      .row
+        .columns
+          %p Copyright © 2015 Emacs.el
+          %p The Emacs.el podcast is made by Daniel Gopar.
+          = javascript_include_tag  "all"
